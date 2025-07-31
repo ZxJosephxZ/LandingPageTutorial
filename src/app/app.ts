@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, signal } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule, NgClass],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Landing_Page_Tutorial');
+  menuOption:string = '';
+
+  onOption(menuOption:string)
+  {
+    this.menuOption = menuOption;
+  }
 }
