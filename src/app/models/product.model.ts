@@ -4,6 +4,12 @@ export interface IProduct {
     products: Product[];
 }
 
+export interface IProductDetail {
+  status: string;
+  message: string;
+  product: Product;
+}
+
 export interface Product {
     id:          number;
     title:       string;

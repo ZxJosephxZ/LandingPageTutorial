@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProduct } from '../models/product.model';
+import { IProduct, IProductDetail } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class Api {
         return this._http.get<IProduct>(this.urlBase);
     }
 
-    getProduct(id:number):Observable<IProduct>
+    getProduct(id:number):Observable<IProductDetail>
     {
-      return this._http.get<IProduct>(`${this.urlBase}/${id}`);
+      return this._http.get<IProductDetail>(`${this.urlBase}/${id}`);
     }
 }
